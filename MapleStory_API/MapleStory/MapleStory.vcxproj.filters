@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="01.Core">
+      <UniqueIdentifier>{371805b2-5c47-4ac5-9b75-98fb940a20c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object">
+      <UniqueIdentifier>{81d728bb-0a78-4a0f-b9fe-e2b313e0819a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Scene">
+      <UniqueIdentifier>{a39c6e0f-4874-42e7-a1de-422a18a15eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Resource">
+      <UniqueIdentifier>{acf2b568-3123-4080-a060-fc3227cbc903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\01.Timer">
+      <UniqueIdentifier>{00c1e318-a99c-434f-a1ba-90a789bfc5f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\02.Input">
+      <UniqueIdentifier>{051d8532-59c0-40a4-a2d5-242a0989bd77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\03.Path">
+      <UniqueIdentifier>{5bcff792-69c5-4549-aaf0-81b4e1c4a323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\04.Math">
+      <UniqueIdentifier>{13a748ff-358f-456e-b735-9ca60e838fe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\05.Camera">
+      <UniqueIdentifier>{e3543ad8-1531-4d3d-bed4-f052348122d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\06.Debug">
+      <UniqueIdentifier>{aebdd40e-d6f4-4ea3-be2a-a292014ca476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\07.Sound">
+      <UniqueIdentifier>{30addff8-f15f-4b64-9e36-12b670c7fa4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\08.StageManager">
+      <UniqueIdentifier>{63e1eab0-2ee9-49ab-8458-c40922d8de43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object\01.Character">
+      <UniqueIdentifier>{71bf62ba-a619-40a2-9fdd-497346d8a2a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Macro.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Type.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>01.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Ref.h">
+      <Filter>01.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>01.Core\01.Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>01.Core\06.Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>01.Core\04.Math</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>01.Core\03.Path</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>01.Core\02.Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>01.Core\05.Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj.h">
+      <Filter>02.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>04.Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>04.Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="testScene.h">
+      <Filter>03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneComponent.h">
+      <Filter>03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>02.Object\01.Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>02.Object\01.Character</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>01.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Ref.cpp">
+      <Filter>01.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>01.Core\01.Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>01.Core\06.Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>01.Core\04.Math</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>01.Core\03.Path</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>01.Core\02.Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>01.Core\05.Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj.cpp">
+      <Filter>02.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>04.Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>04.Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="testScene.cpp">
+      <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneComponent.cpp">
+      <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>02.Object\01.Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>02.Object\01.Character</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icon1.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MapleStory.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+﻿  Core.cpp
+  Debug.cpp
+  main.cpp
+  Ref.cpp
+C:\Users\IBK\Desktop\MapleStory_API\MapleStory_API\MapleStory\Type.h(3,10): error C1083:  포함 파일을 열 수 없습니다. 'Flag.h': No such file or directory
+  Timer.cpp
+C:\Users\IBK\Desktop\MapleStory_API\MapleStory_API\MapleStory\Type.h(3,10): error C1083:  포함 파일을 열 수 없습니다. 'Flag.h': No such file or directory
+  코드를 생성하고 있습니다...
+C:\Users\IBK\Desktop\MapleStory_API\MapleStory_API\MapleStory\Type.h(3,10): error C1083:  포함 파일을 열 수 없습니다. 'Flag.h': No such file or directory
