@@ -52,6 +52,15 @@
     <Filter Include="02.Object\01.Character">
       <UniqueIdentifier>{71bf62ba-a619-40a2-9fdd-497346d8a2a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Object\02.UI">
+      <UniqueIdentifier>{15f070a2-6300-450a-932e-d35848b75056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object\03.Effect">
+      <UniqueIdentifier>{1e63db57-8fad-4e7e-b79e-31a62375ddbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.Animation">
+      <UniqueIdentifier>{39df594d-f968-40db-aeaa-a1726ee77255}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Macro.h">
@@ -123,6 +132,21 @@
     <ClInclude Include="Player.h">
       <Filter>02.Object\01.Character</Filter>
     </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>02.Object\02.UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>02.Object\02.UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>02.Object\03.Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>05.Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationClip.h">
+      <Filter>05.Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -181,6 +205,21 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>02.Object\01.Character</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>02.Object\02.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>02.Object\02.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>02.Object\03.Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>05.Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationClip.cpp">
+      <Filter>05.Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

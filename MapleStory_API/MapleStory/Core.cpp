@@ -262,7 +262,7 @@ int CCore::Render(float fTime)
 	GET_SINGLE(CSceneManager)->Render(m_pBackBuffer->GetDC(), fTime);
 
 	// 마지막으로 마우스를 그려준다.
-//	GET_SINGLE(CInput)->RenderMouse(m_pBackBuffer->GetDC(), fTime);
+	GET_SINGLE(CInput)->RenderMouse(m_pBackBuffer->GetDC(), fTime);
 
 	// 모든 오브젝트가 그려진 백버퍼를 화면버퍼에 그려준다.
 	BitBlt(m_hDC, 0, 0, m_tResolution.iWidth, m_tResolution.iHeight,

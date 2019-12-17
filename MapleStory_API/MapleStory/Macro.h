@@ -31,9 +31,9 @@
 #define WINDOWHANDLE GET_SINGLE(CCore)->GetWindowHandle()
 #define WINDOWDC GET_SINGLE(CCore)->GetWindowDC()
 
-#define KEYPRESS(key) GET_SINGLE(CInput)->KeyPress(key)
-#define KEYPUSH(key) GET_SINGLE(CInput)->KeyPush(key)
-#define KEYUP(key) GET_SINGLE(CInput)->KeyUp(Key)
+#define KEYPRESS(key)	GET_SINGLE(CInput)->KeyPress(key)
+#define KEYUP(key)		GET_SINGLE(CInput)->KeyUp(Key)
+#define KEYPUSH(key)	GET_SINGLE(CInput)->KeyPush(key)
 
 #define MOUSECLIENTPOS GET_SINGLE(CInput)->GetMouseCluent()
 #define MOUSEWORLDPOS GET_SINGLE(CInput)->GetMouseWorld()

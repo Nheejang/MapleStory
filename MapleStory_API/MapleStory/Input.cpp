@@ -1,18 +1,20 @@
 #include "Input.h"
 #include "Core.h"
-#include "Camera.h"
+#include"Camera.h"
+#include"Mouse.h"
 
 DEFINITION_SINGLE(CInput)
 
 CInput::CInput() :
 	m_pCreateKey(nullptr),
-	
+	m_pMouse(nullptr),
 	m_bShowCursor(false)
 {
 }
 
 CInput::~CInput()
 {
+	SAFE_RELEASE(m_pMouse);
 	Safe_Delete_Map(m_mapKey);
 }
 
@@ -24,9 +26,23 @@ bool CInput::Init()
 	AddKey("MoveLeft", 'A');
 	AddKey("MoveRight", 'D');
 
-	
+	AddKey(VK_LBUTTON, "LButton");
 
-	ShowCursor(TRUE);
+	AddKey(VK_RBUTTON, "RButton");
+
+	AddKey(VK_MBUTTON, "MButton");
+	m_pMouse = new CMouse;
+
+	if (!m_pMouse->Init())
+	{
+		SAFE_RELEASE(m_pMouse);
+		return false;
+	}
+
+	m_pMouse->SetSize(20.f, 20.f);
+	m_pMouse->SetTexture("Mouse", TEXT("Teemo.bmp"));
+	m_pMouse->SetColorKey(255, 0, 255);
+	ShowCursor(false);
 
 	return true;
 }
@@ -70,6 +86,42 @@ void CInput::Update(float fTime)
 			iter->second->bUp = false;
 	}
 
+	POINT tMousePos;
+
+	GetCursorPos(&tMousePos);
+	ScreenToClient(WINDOWHANDLE, &tMousePos);
+
+	m_tMouseGap.x = tMousePos.x - m_tMouseClient.x;
+	m_tMouseGap.y = tMousePos.y - m_tMouseClient.y;
+
+	m_tMouseClient = tMousePos;
+
+	m_tMouseWorld = m_tMouseClient + GET_SINGLE(CCamera)->GetPos();
+
+	m_pMouse->SetPos(m_tMouseWorld);
+
+	m_pMouse->Update(fTime);
+	m_pMouse->LateUpdate(fTime);
+
+
+	if (!m_bShowCursor && (m_tMouseClient.x < 0 || m_tMouseClient.x > _RESOLUTION.iWidth ||
+		m_tMouseClient.y < 0 || m_tMouseClient.y > _RESOLUTION.iHeight))
+	{
+		m_bShowCursor = true;
+
+		while (ShowCursor(TRUE) != 0)
+		{
+		}
+	}
+
+	else if (m_bShowCursor && 0.f <= m_tMouseClient.x && m_tMouseClient.x <= _RESOLUTION.iWidth &&
+		0.f <= m_tMouseClient.y && m_tMouseClient.y <= _RESOLUTION.iHeight)
+	{
+		m_bShowCursor = false;
+		while (ShowCursor(FALSE) >= 0)
+		{
+		}
+	}
 	
 }
 
@@ -103,6 +155,10 @@ bool CInput::KeyUp(const string& strKey)
 	return pInfo->bUp;
 }
 
+void CInput::RenderMouse(HDC hDC, float fTime)
+{
+	m_pMouse->Render(hDC, fTime);
+}
 
 
 PKEYINFO CInput::FindKey(const string& strKey)

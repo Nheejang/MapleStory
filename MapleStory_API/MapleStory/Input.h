@@ -6,9 +6,9 @@ typedef struct _tagKeyInfo
 {
 	string			strName;
 	vector<DWORD>	vecKey;
-	bool	bPress;
 	bool	bPush;
 	bool	bUp;
+	bool	bPress;
 }KEYINFO, * PKEYINFO;
 
 class CInput
@@ -16,10 +16,29 @@ class CInput
 private:
 	unordered_map<string, PKEYINFO>	m_mapKey;
 	PKEYINFO		m_pCreateKey;
+	POSITION		m_tMouseClient;
+	POSITION		m_tMouseWorld;
+	POSITION		m_tMouseGap;
+	class CMouse*	m_pMouse;
 	bool			m_bShowCursor;
 
 public:
-
+	class CMouse* GetMouseObj() const
+	{
+		return m_pMouse;
+	}
+	POSITION GetMouseGap() const
+	{
+		return m_tMouseGap;
+	}
+	POSITION GetMouseClient() const
+	{
+		return m_tMouseClient;
+	}
+	POSITION GetMouseWorld() const
+	{
+		return m_tMouseWorld;
+	}
 
 public:
 	bool Init();
