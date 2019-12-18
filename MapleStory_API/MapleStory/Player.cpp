@@ -38,26 +38,26 @@ int CPlayer::Input(float fTime)
 {
 	if (KEYPUSH("MoveLeft"))
 	{
-		Rotation(fTime);
-		//Move(-m_fMoveSpeed, 0.f, fTime);
+		//Rotation(fTime);
+		Move(-m_fMoveSpeed, 0.f, fTime);
 	}
 
 	if (KEYPUSH("MoveRight"))
 	{
-		Rotation(-fTime);
-		//Move(m_fMoveSpeed, 0.f, fTime);
+		//Rotation(-fTime);
+		Move(m_fMoveSpeed, 0.f, fTime);
 	}
 
 	if (KEYPUSH("MoveUp"))
 	{
-		//Move(0.f, -m_fMoveSpeed, fTime);
-		MoveByAngle(fTime);
+		Move(0.f, -m_fMoveSpeed, fTime);
+		//MoveByAngle(fTime);
 	}
 
 	if (KEYPUSH("MoveDown"))
 	{
-		//Move(0.f, m_fMoveSpeed, fTime);
-		MoveByAngle(-fTime);
+		Move(0.f, m_fMoveSpeed, fTime);
+		//MoveByAngle(-fTime);
 	}
 
 	if (KEYPRESS("Jump"))

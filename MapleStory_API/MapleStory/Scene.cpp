@@ -12,6 +12,7 @@ CScene::~CScene()
 	CObj::EraseSceneObject(this);
 	CObj::EraseFindList();
 	CObj::ErasePrototype(this);
+	SAFE_RELEASE(m_pSceneComponent);
 	Safe_Release_VecList(m_LayerList);
 }
 

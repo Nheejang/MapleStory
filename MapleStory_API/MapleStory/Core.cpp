@@ -7,7 +7,7 @@
 #include"Debug.h"
 #include"ResourceManager.h"
 #include"Texture.h"
-//#include"StageManager.h"
+//#include "StageManager.h"
 
 
 DEFINITION_SINGLE(CCore)
@@ -27,12 +27,19 @@ CCore::CCore() :
 	m_hDC = 0;
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	//_CrtSetBreakAlloc(5399);
+	_CrtSetBreakAlloc(358);
 
 }
 
 CCore::~CCore()
 {
+	DESTROY_SINGLE(CSceneManager);
+	DESTROY_SINGLE(CCamera);
+	DESTROY_SINGLE(CPathManager);
+	DESTROY_SINGLE(CResourceManager);
+	DESTROY_SINGLE(CInput);
+	SAFE_RELEASE(m_pBackBuffer);
+	SAFE_DELETE(m_pTimer);
 	//SAFE_RELEASE(m_pBackBuffer);
 
 	if (m_hDC)
