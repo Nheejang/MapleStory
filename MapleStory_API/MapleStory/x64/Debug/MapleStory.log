@@ -1,10 +1,6 @@
-﻿  Player.cpp
+﻿  Camera.cpp
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(43,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(44,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(50,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(51,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Player.cpp(105,34): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Player.cpp(105,23): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Player.cpp(111,34): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Player.cpp(111,22): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MapleStory.vcxproj -> C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\x64\Debug\MapleStory.exe

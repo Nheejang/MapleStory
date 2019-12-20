@@ -101,6 +101,7 @@ void CPlayer::Render(HDC hDC, float fTime)
 
 	POSITION	tCenter = m_tPos - tCameraPos;
 
+
 	// 방향을 표시할 선을 그려준다.
 	MoveToEx(hDC, tCenter.x, tCenter.y, nullptr);
 

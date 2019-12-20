@@ -32,7 +32,7 @@
 #define WINDOWDC GET_SINGLE(CCore)->GetWindowDC()
 
 #define KEYPRESS(key)	GET_SINGLE(CInput)->KeyPress(key)
-#define KEYUP(key)		GET_SINGLE(CInput)->KeyUp(Key)
+#define KEYUP(key)		GET_SINGLE(CInput)->KeyUp(key)
 #define KEYPUSH(key)	GET_SINGLE(CInput)->KeyPush(key)
 
 #define MOUSECLIENTPOS GET_SINGLE(CInput)->GetMouseCluent()

@@ -27,8 +27,8 @@ bool CtestScene::Init()
 
 	GET_SINGLE(CCamera)->SetTarget(pPlayer);
 
-	GET_SINGLE(CCamera)->SetTargetPivot(0.5f, 0.5f);
-	
+	GET_SINGLE(CCamera)->SetTargetPivot(300.f, 400.f);
+	//GET_SINGLE(CCamera)->SetPos(pPlayer->GetPos());
 	SAFE_RELEASE(pPlayer);
 	SAFE_RELEASE(pUILayer);
 	SAFE_RELEASE(pBackLayer);

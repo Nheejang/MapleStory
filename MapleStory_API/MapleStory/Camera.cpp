@@ -34,7 +34,13 @@ void CCamera::Update(float fTime)
 	// 잡아준다.
 	if (m_pTarget)
 	{
-		POSITION	tTargetPos = m_pTarget->GetPos();
+		//m_tPos=m_pTarget->GetPos();
+		m_tPos.x = m_pTarget->GetPos().x-m_tResolution.x / 2;
+		m_tPos.y = m_pTarget->GetPos().y-m_tResolution.y / 2;
+
+		if (m_tPos.x < 200.f)
+			m_tPos.x =m_tResolution.x/2;
+		/*POSITION	tTargetPos = m_pTarget->GetPos();
 		m_tPos = tTargetPos - m_tTargetPivot * m_tResolution;
 
 		if (m_tPos.x < 0.f)
@@ -47,6 +53,6 @@ void CCamera::Update(float fTime)
 			m_tPos.y = 0.f;
 
 		else if (m_tPos.y + m_tResolution.y >= m_tWorldSize.y)
-			m_tPos.y = m_tWorldSize.y - m_tResolution.y;
+			m_tPos.y = m_tWorldSize.y - m_tResolution.y;*/
 	}
 }

@@ -53,19 +53,19 @@ int CMouse::Input(float fTime)
 		m_bLClick = true;
 		std::cout << "ÂïÈû" << std::endl;
 	}
-	//else if (KEYUP("LButton"))
-	//	m_bLClick = false;
+	else if (KEYUP("LButton"))
+		m_bLClick = false;
 	
 	if (KEYPUSH("RButton"))
 		m_bRClick = true;
-	/*else if (KEYUP("RButton"))
+	else if (KEYUP("RButton"))
 		m_bRClick = false;
-*/
+
 	if (KEYPUSH("MButton"))
 		m_bMClick = true;
-	/*else if (KEYUP("MButton"))
+	else if (KEYUP("MButton"))
 		m_bMClick = false;
-*/
+
 	return 0;
 }
 
