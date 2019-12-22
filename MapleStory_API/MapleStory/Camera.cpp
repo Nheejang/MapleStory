@@ -38,8 +38,10 @@ void CCamera::Update(float fTime)
 		m_tPos.x = m_pTarget->GetPos().x-m_tResolution.x / 2;
 		m_tPos.y = m_pTarget->GetPos().y-m_tResolution.y / 2;
 
-		if (m_tPos.x < 200.f)
-			m_tPos.x =m_tResolution.x/2;
+		//if (m_tPos.x < 200.f)
+		//	m_tPos.x =m_tResolution.x/2;
+		//	m_tPos.y = m_tResolution.y / 2;
+			
 		/*POSITION	tTargetPos = m_pTarget->GetPos();
 		m_tPos = tTargetPos - m_tTargetPivot * m_tResolution;
 

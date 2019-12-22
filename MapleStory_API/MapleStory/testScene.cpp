@@ -5,7 +5,7 @@
 #include"Core.h"
 #include "SceneManager.h"
 #include"Player.h"
-
+#include"Monster.h"
 CtestScene::CtestScene()
 {
 }
@@ -25,6 +25,13 @@ bool CtestScene::Init()
 
 	CPlayer* pPlayer = CObj::CreateObject<CPlayer>("Player", pLayer);
 
+
+	CMonster* pMonster = CObj::CreateObject<CMonster>("Monster", pLayer);
+
+	pMonster->SetPos(500.f, 500.f);
+	pMonster->SetTarget(pPlayer);
+
+	SAFE_RELEASE(pMonster);
 	GET_SINGLE(CCamera)->SetTarget(pPlayer);
 
 	GET_SINGLE(CCamera)->SetTargetPivot(300.f, 400.f);

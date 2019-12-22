@@ -137,7 +137,9 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="NPC.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="Player.h" />
@@ -152,6 +154,7 @@
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UIButton.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
@@ -165,7 +168,9 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -178,6 +183,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UIButton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Icon1.ico" />

@@ -25,7 +25,7 @@ bool CPlayer::Init()
 	SetMoveSpeed(300.f);
 	SetTexture("Teemo", TEXT("Teemo.bmp"));
 
-	SetPos(100.f, 100.f);
+	SetPos(200.f, 200.f);
 	SetSize(100.f, 100.f);
 	SetPivot(0.5f, 0.5f);
 
