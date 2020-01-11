@@ -1,6 +1,6 @@
 #include"Mouse.h"
 #include"Input.h"
-#include<iostream>
+
 
 CMouse::CMouse()
 {
@@ -49,10 +49,7 @@ int CMouse::Input(float fTime)
 	CObj::Input(fTime);
 	
 	if (KEYPUSH("LButton"))
-	{
 		m_bLClick = true;
-		std::cout << "ÂïÈû" << std::endl;
-	}
 	else if (KEYUP("LButton"))
 		m_bLClick = false;
 	

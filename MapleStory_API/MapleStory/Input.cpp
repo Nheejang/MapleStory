@@ -31,6 +31,7 @@ bool CInput::Init()
 	AddKey(VK_RBUTTON, "RButton");
 
 	AddKey(VK_MBUTTON, "MButton");
+	
 	m_pMouse = new CMouse;
 
 	if (!m_pMouse->Init())
@@ -39,9 +40,10 @@ bool CInput::Init()
 		return false;
 	}
 
-	m_pMouse->SetSize(20.f, 20.f);
+	m_pMouse->SetSize(45.f, 45.f);
 	m_pMouse->SetTexture("Mouse", TEXT("Teemo.bmp"));
 	m_pMouse->SetColorKey(255, 0, 255);
+	//m_bShowCursor=false;
 	ShowCursor(false);
 
 	return true;

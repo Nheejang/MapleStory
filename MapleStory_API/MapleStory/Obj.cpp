@@ -128,6 +128,9 @@ const list<CObj*>* CObj::FindObjects(const string& strKey)
 		m_mapSceneObj.equal_range(strKey);*/
 		// auto : 무조건 선언과 동시에 초기화 해야 한다. 지정하는 값 타입으로 변수타입이 설정된다.
 		// 중간에 다른값을 넣으면 안된다.
+
+
+	//MultiMap = equal_range()    --> 결과값으로 구간이 pair로 나옴 (first = begin, second = end) 
 	auto pair = m_mapSceneObj.equal_range(strKey);
 
 	unordered_multimap<string, class CObj*>::iterator	iter = pair.first;
@@ -330,9 +333,10 @@ void CObj::Render(HDC hDC, float fTime)
 		}
 
 		else
-		{
+		{//컬러키를 설정하고 텍스쳐가 셋팅되어 있을때만 이곳으로 들어옴 현재는 마우스만...
 			TransparentBlt(hDC, tLT.x, tLT.y, tSize.x, tSize.y, m_pTexture->GetDC(),
-				iFrameX, iFrameY, tSize.x, tSize.y, m_dwColorKey);
+				iFrameX, iFrameY, 100,100, m_dwColorKey);
+			//9번째 인자,10번째 인자    --> 좌상단 부터 시작해서 원하는 비트수만큼을잘라내어    4,5번째에 설정한 인자의크기로 출력해줌 
 		}
 	}
 

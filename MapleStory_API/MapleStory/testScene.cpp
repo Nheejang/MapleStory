@@ -6,6 +6,7 @@
 #include "SceneManager.h"
 #include"Player.h"
 #include"Monster.h"
+
 CtestScene::CtestScene()
 {
 }
@@ -33,8 +34,11 @@ bool CtestScene::Init()
 
 	SAFE_RELEASE(pMonster);
 	GET_SINGLE(CCamera)->SetTarget(pPlayer);
-
 	GET_SINGLE(CCamera)->SetTargetPivot(300.f, 400.f);
+	
+	
+
+
 	//GET_SINGLE(CCamera)->SetPos(pPlayer->GetPos());
 	SAFE_RELEASE(pPlayer);
 	SAFE_RELEASE(pUILayer);

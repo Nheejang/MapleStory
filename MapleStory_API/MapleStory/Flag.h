@@ -15,6 +15,14 @@ enum OBJECT_TYPE
 	OT_TEXT
 };
 
+//Button State
+enum BUTTON_STATE
+{
+	BS_NORMAL,
+	BS_MOUSEON,
+	BS_CLICK
+};
+
 enum ANIMATION_CLIP_TYPE
 {
 	ACT_ATLAS,
