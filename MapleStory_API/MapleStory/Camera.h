@@ -10,7 +10,8 @@ private:
 	_SIZE		m_tWorldSize;
 	class CObj* m_pTarget;
 	POSITION	m_tTargetPivot;
-
+	POSITION m_tPrePos;
+	
 public:
 	POSITION GetPos()	const
 	{
@@ -25,6 +26,14 @@ public:
 	_SIZE GetWorldSize()	const
 	{
 		return m_tWorldSize;
+	}
+	POSITION GetWorldViewLeftTop() const
+	{
+		return m_tPos - m_tResolution/2;
+	}
+	POSITION GetWorldViewRightBottom() const
+	{
+		return m_tPos + m_tResolution / 2;
 	}
 
 public:

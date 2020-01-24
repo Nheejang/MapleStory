@@ -31,3 +31,4 @@ void CSceneComponent::Collision(float fTime)
 void CSceneComponent::Render(HDC hDC, float fTime)
 {
 }
+

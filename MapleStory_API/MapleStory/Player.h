@@ -12,6 +12,8 @@ protected:
 	~CPlayer();
 
 public:
+	int id = -1;
+public:
 	virtual bool Init();
 	virtual int Input(float fTime);
 	virtual int Update(float fTime);

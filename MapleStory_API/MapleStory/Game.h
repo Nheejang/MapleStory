@@ -1,5 +1,6 @@
 #pragma once
-
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+#include<WS2tcpip.h>
 #include<Windows.h>
 #include<list>
 #include<vector>
@@ -11,12 +12,18 @@
 #include<functional>
 #include<conio.h>
 
+#include<thread>
+
 using namespace std;
 
 #include"Macro.h"
 #include"Type.h"
+#include"Protocol.h"
 
+#pragma comment(lib,"ws2_32.lib")
 #pragma comment(lib,"msimg32.lib")
+
+#define WM_SOCKET WM_USER+1
 
 #ifdef UNICODE
 typedef wstring MyString;

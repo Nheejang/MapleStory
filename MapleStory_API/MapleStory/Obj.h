@@ -74,6 +74,8 @@ protected:
 	bool	m_bCameraEnable;
 	POSITION	m_tMove;
 
+	class CAnimation* m_pAnimation;
+
 public:
 	bool GetCameraEnable()	const
 	{
@@ -230,6 +232,15 @@ public:
 		const string& strPathKey = TEXTURE_PATH);
 	bool SetTexture(const string& strKey);
 	bool SetTexture(class CTexture* pTexture);
+
+	bool AddAnimationClip(const string& strName, ANIMATION_CLIP_TYPE eType,
+		ANIMATION_OPTION eOption, float fFrameWidth, float fFrameHeight,
+		int iFrameCountX, int iFrameCountY, int iFrameMaxX, int iFrameMaxY,
+		int iStartX, int iStartY, float fCompleteTime,
+		const string& strTexKey, const TCHAR* pFileName,
+		bool bColorKey = true, DWORD dwColorKey = RGB(255, 0, 255),
+		const string& strPathKey = TEXTURE_PATH);
+	bool LoadAnimation(const char* pFileName, const string& strPathKey = DATA_PATH);
 
 public:
 	void Move(float x, float y);

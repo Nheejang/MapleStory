@@ -1,9 +1,10 @@
 #include"Monster.h"
 #include"Math.h"
+#include"Character.h"
 CMonster::CMonster() :
 	m_pTarget(nullptr)
 {
-	
+	m_eType = OT_MONSTER;
 }
 
 CMonster::CMonster(const CMonster& monster) :
@@ -22,7 +23,7 @@ bool CMonster::Init()
 	SetSize(100.f, 100.f);
 	SetPivot(0.5f, 0.5f);
 
-	SetTexture("Teemo", TEXT("Teemo.bmp"));
+	SetTexture("Mon", TEXT("Monster_Sword2_Left.bmp"));
 
 	return true;
 }
@@ -48,6 +49,10 @@ int CMonster::Update(float fTime)
 		m_fAngle = CMath::GetDegree(m_tPos, m_pTarget->GetPos());
 		MoveByAngle(fTime);
 		
+	}
+	else
+	{
+		Move(1, 0, fTime);
 	}
 	return 0;
 }

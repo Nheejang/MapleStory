@@ -25,7 +25,8 @@ bool CInput::Init()
 	AddKey("MoveDown", 'S');
 	AddKey("MoveLeft", 'A');
 	AddKey("MoveRight", 'D');
-
+	AddKey("Change", 'N');
+	AddKey("Slow", 'G');
 	AddKey(VK_LBUTTON, "LButton");
 
 	AddKey(VK_RBUTTON, "RButton");
@@ -40,8 +41,8 @@ bool CInput::Init()
 		return false;
 	}
 
-	m_pMouse->SetSize(45.f, 45.f);
-	m_pMouse->SetTexture("Mouse", TEXT("Teemo.bmp"));
+	m_pMouse->SetSize(32.f, 31.f);
+	m_pMouse->SetTexture("Mouse", TEXT("0.bmp"));
 	m_pMouse->SetColorKey(255, 0, 255);
 	//m_bShowCursor=false;
 	ShowCursor(false);

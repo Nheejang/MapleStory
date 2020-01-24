@@ -7,6 +7,7 @@
 #include"Debug.h"
 #include"ResourceManager.h"
 #include"Texture.h"
+#include"NetworkManager.h"
 //#include "StageManager.h"
 
 
@@ -27,7 +28,7 @@ CCore::CCore() :
 	m_hDC = 0;
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	_CrtSetBreakAlloc(358);
+	//_CrtSetBreakAlloc(6341);
 
 }
 
@@ -96,12 +97,15 @@ bool CCore::Init(HINSTANCE hInst, unsigned int iWidth, unsigned int iHeight,
 
 
 
-	GET_SINGLE(CCamera)->SetResolution((float)iWidth, (float)iHeight);
+	GET_SINGLE(CCamera)->SetResolution((float)512, (float)360);
 
 	// 장면을 초기화한다.
 	if (!GET_SINGLE(CSceneManager)->Init())
 		return false;
 
+	//네트워크매니저 초기화
+	if (!GET_SINGLE(NetworkManager)->Init())
+		return false;
 
 	// 백버퍼를 얻어온다.
 	m_pBackBuffer = GET_SINGLE(CResourceManager)->FindTexture("BackBuffer");
@@ -423,6 +427,22 @@ LRESULT CCore::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		GET_SINGLE(CCore)->ResizeWindow();
 		break;
 		// WM_KEYDOWN : 키를 누를때 들어온다.
+	case WM_SOCKET:
+	{
+		if (WSAGETSELECTERROR(lParam)) {
+			//NetworkManager::getInstance()->shutDownServer();
+			break;
+		}
+		switch (WSAGETSELECTEVENT(lParam)) {
+		case FD_READ:
+			GET_SINGLE(NetworkManager)->readPacket((SOCKET)wParam);
+			break;
+		case FD_CLOSE:
+			//NetworkManager::getInstance()->shutDownServer();
+			break;
+		}
+	}
+	break;
 	case WM_KEYDOWN:
 		switch (wParam)
 		{

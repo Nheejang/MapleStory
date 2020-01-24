@@ -4,7 +4,7 @@
 #include "ResourceManager.h"
 #include "Texture.h"
 #include "Math.h"
-
+#include"Animation.h"
 #include "Camera.h"
 #include "PathManager.h"
 
@@ -220,7 +220,32 @@ bool CObj::SetTexture(CTexture* pTexture)
 
 	return true;
 }
+bool CObj::AddAnimationClip(const string& strName, ANIMATION_CLIP_TYPE eType,
+	ANIMATION_OPTION eOption, float fFrameWidth, float fFrameHeight, int iFrameCountX,
+	int iFrameCountY, int iFrameMaxX, int iFrameMaxY, int iStartX, int iStartY,
+	float fCompleteTime, const string& strTexKey, const TCHAR* pFileName,
+	bool bColorKey, DWORD dwColorKey,
+	const string& strPathKey)
+{
+	if (!m_pAnimation)
+	{
+		m_pAnimation = new CAnimation;
+		m_pAnimation->SetObj(this);
+	}
 
+	return m_pAnimation->CreateAnimationClip(strName, eType, eOption, fFrameWidth,
+		fFrameHeight, iFrameCountX, iFrameCountY, iFrameMaxX, iFrameMaxY,
+		iStartX, iStartY, fCompleteTime, strTexKey, pFileName, bColorKey, dwColorKey, strPathKey);
+}
+bool CObj::LoadAnimation(const char* pFileName, const string& strPathKey)
+{
+	if (!m_pAnimation)
+	{
+		m_pAnimation = new CAnimation;
+		m_pAnimation->SetObj(this);
+	}
+	return m_pAnimation->LoadAnimation(pFileName, strPathKey);
+}
 
 
 void CObj::Move(float x, float y)
@@ -284,6 +309,8 @@ int CObj::Update(float fTime)
 		m_tMove.y -= m_fForce * fTime;
 	}
 
+	if (m_pAnimation)
+		m_pAnimation->Update(fTime);
 	
 	return 0;
 }
@@ -314,11 +341,16 @@ void CObj::Render(HDC hDC, float fTime)
 		int	iFrameX = 0, iFrameY = 0;
 		_SIZE	tSize = m_tSize;
 
-		
+		if (m_pAnimation)
+		{
+			iFrameX = m_pAnimation->GetFrameX() * m_pAnimation->GetFrameSize().x;
+			iFrameY = m_pAnimation->GetFrameY() * m_pAnimation->GetFrameSize().y;
+			tSize = m_pAnimation->GetFrameSize();
+		}
 
 		iFrameX += m_tOffset.x;
 		iFrameY += m_tOffset.y;
-
+		
 		if (!m_bColorKey)
 		{
 			// BitBlt : 이미지를 출력해주는 함수이다.
@@ -330,13 +362,18 @@ void CObj::Render(HDC hDC, float fTime)
 			// 7번, 8번인자 : 출력할 대상DC에서 어디부터 출력할지 좌표를 지정한다.
 			BitBlt(hDC, tLT.x, tLT.y, tSize.x, tSize.y,
 				m_pTexture->GetDC(), iFrameX, iFrameY, SRCCOPY);
+			
+			//StretchBlt() 이미지 확대축소반전 기능이있긴한데
+			//bitblt보다 엄청 느려서 사용을잘 안함
+			//실제 사용은 이미지 자체크기를 키워서 사용한다고함...
 		}
 
 		else
 		{//컬러키를 설정하고 텍스쳐가 셋팅되어 있을때만 이곳으로 들어옴 현재는 마우스만...
 			TransparentBlt(hDC, tLT.x, tLT.y, tSize.x, tSize.y, m_pTexture->GetDC(),
-				iFrameX, iFrameY, 100,100, m_dwColorKey);
+				iFrameX, iFrameY, tSize.x,tSize.y, m_dwColorKey);
 			//9번째 인자,10번째 인자    --> 좌상단 부터 시작해서 원하는 비트수만큼을잘라내어    4,5번째에 설정한 인자의크기로 출력해줌 
+			//현재 텍스쳐의 비트수보다 커지면 출력안됨
 		}
 	}
 

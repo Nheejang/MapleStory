@@ -14,11 +14,12 @@ private:
 private:
 	list<class CLayer*>	m_LayerList;
 	class CSceneComponent* m_pSceneComponent;
+	int MyClientID = 0;
 
 public:
 	class CLayer* CreateLayer(const string& strTag, int iZOrder = 0);
 	class CLayer* FindLayer(const string& strTag);
-
+	class CSceneComponent* GetCurrentComponent();
 public:
 	bool Init();
 	int Input(float fTime);

@@ -20,6 +20,8 @@ private:
 
 public:
 	class CScene* CreateScene(const string& strTag);
+	void Change();
+	class CScene* GetCurrentScene();
 	//template <typename T>
 	//void CreateNextScene(const string& strTag)
 	//{

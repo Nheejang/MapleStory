@@ -23,7 +23,6 @@ bool CSceneManager::Init()
 	CtestScene* pSceneCom = m_pScene->CreateSceneComponent<CtestScene>("testScene");
 
 	SAFE_RELEASE(pSceneCom);
-
 	return true;
 }
 
@@ -82,4 +81,16 @@ CScene* CSceneManager::CreateScene(const string& strTag)
 	}
 
 	return pScene;
+}
+
+void CSceneManager::Change()
+{
+	
+	m_pNextScene = CreateScene("testScene2");
+	CtestScene* pSceneCom2 = m_pNextScene->CreateSceneComponent<CtestScene>("testScene2");
+	SAFE_RELEASE(pSceneCom2);
+}
+CScene* CSceneManager::GetCurrentScene()
+{
+	return m_pScene;
 }

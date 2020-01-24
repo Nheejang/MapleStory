@@ -61,6 +61,12 @@
     <Filter Include="05.Animation">
       <UniqueIdentifier>{39df594d-f968-40db-aeaa-a1726ee77255}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Object\04.Stage">
+      <UniqueIdentifier>{d44f42f1-a2da-419f-8789-60074c5b80e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Core\09.NetworkManager">
+      <UniqueIdentifier>{847f117b-f4f9-4d97-a88a-273c62fcdc0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Macro.h">
@@ -156,6 +162,18 @@
     <ClInclude Include="UIButton.h">
       <Filter>02.Object\02.UI</Filter>
     </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>02.Object\04.Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>02.Object\04.Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkManager.h">
+      <Filter>01.Core\09.NetworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -238,6 +256,15 @@
     </ClCompile>
     <ClCompile Include="UIButton.cpp">
       <Filter>02.Object\02.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>02.Object\04.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>02.Object\04.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkManager.cpp">
+      <Filter>01.Core\09.NetworkManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

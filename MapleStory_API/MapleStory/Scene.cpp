@@ -213,3 +213,8 @@ bool CScene::LayerSort(CLayer* pSrc, CLayer* pDest)
 {
 	return pSrc->m_iZOrder < pDest->m_iZOrder;
 }
+
+CSceneComponent* CScene::GetCurrentComponent()
+{
+	return m_pSceneComponent;
+}
