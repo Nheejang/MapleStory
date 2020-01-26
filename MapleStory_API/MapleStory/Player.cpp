@@ -24,10 +24,12 @@ bool CPlayer::Init()
 	SetMoveSpeed(300.f);
 	//SetTexture("Teemo", TEXT("Teemo.bmp"));
 
-	AddAnimationClip("Walk", ACT_ATLAS, AO_LOOP, 45, 60, 14, 1, 21, 8, 0, 1, 1.0, "AnimTest", TEXT("Left.bmp"));
+	//AddAnimationClip("Walk", ACT_ATLAS, AO_LOOP, 45, 60, 14, 1, 21, 8, 0, 1, 1.0, "AnimTest", TEXT("Left.bmp"));
+	AddAnimationClip("Walk", ACT_ATLAS, AO_LOOP, 256, 256, 3, 1, 3, 1, 0, 0, 1.0, "AnimTest", TEXT("Player_Stand_Right.bmp"),true, RGB(255, 255, 255));
+	
 	//LoadAnimation("PlayerIdle.txt");
 	//SetPos(720, 360.f);
-	SetSize(100.f, 100.f);
+	SetSize(300.f, 300.f);
 //	SetPivot(0.0f, 0.0f);
 
 	//SetGravity(true);

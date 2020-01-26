@@ -37,3 +37,18 @@ enum ANIMATION_OPTION
 	AO_ONCE_DESTROY
 };
 
+//MapType
+enum MAP_TYPE
+{
+	MT_MOVE, //움직일수있는공간
+	MT_NOMOVE //움직일수없는공간
+	//MT_UNEVEN //움직일수없는데 평평하지않은공간
+
+};
+
+enum MAP_OPTION
+{
+	MO_NONE,
+	MO_ICE,
+	MO_SLOW
+};

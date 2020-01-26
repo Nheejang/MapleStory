@@ -1,26 +1,19 @@
-﻿  Core.cpp
+﻿  Map.cpp
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(43,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(44,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(50,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(51,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(335,34): warning C4838:  'unsigned int'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-  NetworkManager.cpp
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(335,56): warning C4838:  'unsigned int'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(43,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(44,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(50,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(51,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\NetworkManager.cpp(66,57): warning C4244:  '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  testScene.cpp
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\NetworkManager.cpp(66,42): warning C4244:  '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(43,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(44,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(50,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(51,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(13,22): warning C4309:  '인수': 상수 값이 잘립니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(13,14): warning C4309:  '인수': 상수 값이 잘립니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(118,27): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(118,16): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(117,54): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(117,43): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(117,32): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Map.cpp(117,25): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(114): warning C4715: 'CCore::Init': 모든 제어 경로에서 값을 반환하지는 않습니다.
-  6 of 1681 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+  All 1694 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   코드를 생성했습니다.
   MapleStory.vcxproj -> C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\x64\Release\MapleStory.exe

@@ -54,7 +54,6 @@ void NetworkManager::processPacket(void * packet)
 	{
 	case SC_POS:
 	{
-		char a = 0;
 		sc_packet_pos* pos_packet = reinterpret_cast<sc_packet_pos*>(packet);
 		
 		auto t = CObj::FindObjects("Player");
