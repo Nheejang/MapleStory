@@ -137,6 +137,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="MakeScene.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Monster.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MakeScene.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Monster.cpp" />

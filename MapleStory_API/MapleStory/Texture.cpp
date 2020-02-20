@@ -26,7 +26,7 @@ bool CTexture::LoadTexture(const string& strKey, const TCHAR* pFileName,
 
 	// 인자로 들어온 파일 경로들을 조합해서 최종 파일 경로를 얻어온다.
 	const TCHAR* pPath = GET_SINGLE(CPathManager)->FindPath(strPathKey);
-	wstring	strFullPath;
+	wstring	strFullPath = {};
 
 	if (pPath)
 		strFullPath = pPath;

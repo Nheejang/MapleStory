@@ -27,6 +27,9 @@ bool CInput::Init()
 	AddKey("MoveRight", 'D');
 	AddKey("Change", 'N');
 	AddKey("Slow", 'G');
+	AddKey("Save", 'M');
+	AddKey("Load", 'L');
+	AddKey("NextImage", 'O');
 	AddKey(VK_LBUTTON, "LButton");
 
 	AddKey(VK_RBUTTON, "RButton");

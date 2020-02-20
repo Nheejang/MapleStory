@@ -93,6 +93,9 @@ void CObj::EraseSceneObject(const string& strKey, CObj* pObj)
 	{
 		if (iter->second == pObj)
 		{
+			CLayer* pLayer = iter->second->GetLayer();
+			pLayer->EraseObject(pObj);
+			SAFE_RELEASE(pLayer);
 			SAFE_RELEASE(pObj);
 			m_mapSceneObj.erase(iter);
 			break;
@@ -177,6 +180,7 @@ CObj::~CObj()
 {
 
 	SAFE_RELEASE(m_pTexture);
+	SAFE_DELETE(m_pAnimation);
 }
 
 CScene* CObj::GetScene() const
@@ -378,7 +382,7 @@ void CObj::Render(HDC hDC, float fTime)
 	}
 
 
-	m_tMove = POSITION(0.f, 0.f);
+	//m_tMove = POSITION(0.f, 0.f);
 }
 
 void CObj::SaveFile(const char* pFileName, const string& strPathKey)

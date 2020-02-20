@@ -79,13 +79,14 @@ void NetworkManager::processPacket(void * packet)
 		if (First)
 		{
 			myClientID = put_packet->id;  First = false;
-			GET_SINGLE(CCamera)->SetTarget(Put_Player);
 		}
 		
 		
 		Put_Player->id = put_packet->id;
 		CLayer* pLayer = GET_SINGLE(CSceneManager)->GetCurrentScene()->FindLayer("Default");
 		pLayer->AddObject(Put_Player);
+		Put_Player->SetPos(put_packet->x, put_packet->y);
+		GET_SINGLE(CCamera)->SetTarget(Put_Player);
 
 		SAFE_RELEASE(pLayer);
 		SAFE_RELEASE(Put_Player);

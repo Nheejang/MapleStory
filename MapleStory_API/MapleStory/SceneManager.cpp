@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include"testScene.h"
+#include"MakeScene.h"
 DEFINITION_SINGLE(CSceneManager)
 
 CSceneManager::CSceneManager() :
@@ -18,9 +19,9 @@ CSceneManager::~CSceneManager()
 
 bool CSceneManager::Init()
 {
-	m_pScene = CreateScene("testScene");
+	m_pScene = CreateScene("MakeScene");
 
-	CtestScene* pSceneCom = m_pScene->CreateSceneComponent<CtestScene>("testScene");
+	CMakeScene* pSceneCom = m_pScene->CreateSceneComponent<CMakeScene>("MakeScene");
 
 	SAFE_RELEASE(pSceneCom);
 	return true;

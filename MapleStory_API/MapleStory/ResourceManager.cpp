@@ -15,8 +15,24 @@ CResourceManager::~CResourceManager()
 bool CResourceManager::Init()
 {
 	CTexture* pTex = LoadTexture("BackBuffer", TEXT("BackBuffer.bmp"));
-
 	SAFE_RELEASE(pTex);
+
+	//pTex = LoadTexture("MapTypeMove", TEXT("OptionNone.bmp"));
+	//SAFE_RELEASE(pTex);
+
+	//pTex = LoadTexture("MapTypeNoMove", TEXT("NoMove.bmp"));
+	//SAFE_RELEASE(pTex);
+
+	//pTex = LoadTexture("MapTypeNoMove2", TEXT("NoMove2.bmp"));
+	//SAFE_RELEASE(pTex);
+
+	//pTex = LoadTexture("MapTypeUnEven", TEXT("UnEvenUp.bmp"));
+	//SAFE_RELEASE(pTex);
+
+	//pTex = LoadTexture("MapTypeNoMove", TEXT("RockTile.bmp"));
+	//SAFE_RELEASE(pTex);
+
+
 
 	return true;
 }
@@ -24,6 +40,7 @@ bool CResourceManager::Init()
 CTexture* CResourceManager::LoadTexture(const string& strKey,
 	const TCHAR* pFileName, const string& strPathKey)
 {
+	
 	CTexture* pTexture = FindTexture(strKey);
 
 	if (pTexture)

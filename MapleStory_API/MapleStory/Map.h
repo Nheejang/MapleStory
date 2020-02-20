@@ -4,7 +4,7 @@ class CMap :
 	public CObj
 {
 	friend class CObj;
-	friend class CStage;
+	friend class CScene;
 
 protected:
 	CMap();
@@ -15,7 +15,12 @@ private:
 	MAP_TYPE m_eMapType;
 	MAP_OPTION m_eMapOption;
 	int m_iIndex;
-	class CTexture* m_pTypeTex;
+	CTexture* m_pTypeTexArray[4];
+	_SIZE m_MapSize;
+	int m_XNumber;
+	int m_YNumber;
+	_SIZE m_TileSize;
+	MAP_TYPE* arrTile;
 
 public:
 	MAP_TYPE GetMapType() const
@@ -30,7 +35,9 @@ public:
 	
 public:
 	void SetMapType(MAP_TYPE eType);
-
+	void SetMap(MAP_TYPE eType, MAP_OPTION eMapOption, _SIZE MapSize, int xNum, int yNum,_SIZE TileSize);
+	void SetTile(MAP_TYPE eType, POSITION pos);
+	
 public:
 	virtual bool Init();
 	virtual int Input(float fTime);

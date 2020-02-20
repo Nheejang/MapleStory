@@ -9,6 +9,7 @@
 #include"BackGround.h"
 #include"Input.h"
 #include"NetworkManager.h"
+#include"Map.h"
 
 CtestScene::CtestScene()
 {
@@ -21,7 +22,7 @@ CtestScene::~CtestScene()
 
 bool CtestScene::Init()
 {
-	GET_SINGLE(CCamera)->SetWorldSize(3000, 2000.f);
+	GET_SINGLE(CCamera)->SetWorldSize(3000.f, 2000.f);
 
 	CLayer* pLayer = m_pScene->FindLayer("Default");
 	CLayer* pBackLayer = m_pScene->FindLayer("BackGround");
@@ -37,6 +38,8 @@ bool CtestScene::Init()
 	pMonster->SetPos(400, 300.f);
 	//pMonster->SetTarget(pPlayer);
 
+
+
 	CBackGround* pBack = CObj::CreateObject<CBackGround>("BackBoard", pBackLayer);
 
 	pBack->SetTexture("tt", TEXT("Stage2.bmp"));
@@ -44,8 +47,14 @@ bool CtestScene::Init()
 	pBack->SetPivot(0, 0);
 	pBack->SetSize(3000,2000);
 	
+
 	SAFE_RELEASE(pBack);
 	SAFE_RELEASE(pMonster);
+
+	CMap* pMap = CObj::CreateObject<CMap>("Map", pBackLayer);
+	pMap->SetMap(MT_MOVE, MO_NONE, GET_SINGLE(CCamera)->GetWorldSize(), 50, 50, (GET_SINGLE(CCamera)->GetWorldSize()/50, GET_SINGLE(CCamera)->GetWorldSize()/50));
+
+	SAFE_RELEASE(pMap);
 	//GET_SINGLE(CCamera)->SetTarget(pPlayer);
 	//GET_SINGLE(CCamera)->SetTargetPivot(0.f, 0.f);
 	//
@@ -53,7 +62,7 @@ bool CtestScene::Init()
 	SAFE_RELEASE(pUILayer);
 	SAFE_RELEASE(pBackLayer);
 	SAFE_RELEASE(pLayer);
-
+	
 	return true;
 }
 
@@ -63,7 +72,7 @@ int CtestScene::Input(float fTime)
 	{
 		cs_packet_up* pPacket = reinterpret_cast<cs_packet_up*>(GET_SINGLE(NetworkManager)->getSendBuffer());
 		pPacket->size = sizeof(cs_packet_up);
-		GET_SINGLE(NetworkManager)->getSendWsaBuf().len = sizeof(cs_packet_up);
+		//GET_SINGLE(NetworkManager)->getSendWsaBuf().len = sizeof(cs_packet_up);
 		DWORD iobyte;
 		pPacket->type = CS_LEFT;
 		GET_SINGLE(NetworkManager)->getSendWsaBuf().len = sizeof(cs_packet_up);
@@ -80,7 +89,7 @@ int CtestScene::Input(float fTime)
 	{
 		cs_packet_up* pPacket = reinterpret_cast<cs_packet_up*>(GET_SINGLE(NetworkManager)->getSendBuffer());
 		pPacket->size = sizeof(cs_packet_up);
-		GET_SINGLE(NetworkManager)->getSendWsaBuf().len = sizeof(cs_packet_up);
+	//	GET_SINGLE(NetworkManager)->getSendWsaBuf().len = sizeof(cs_packet_up);
 		DWORD iobyte;
 		pPacket->type = CS_RIGHT;
 		GET_SINGLE(NetworkManager)->getSendWsaBuf().len = sizeof(cs_packet_up);
@@ -110,11 +119,12 @@ int CtestScene::Input(float fTime)
 		//SetForce(300.f);
 	}
 
-	/*if(KEYPUSH("Change"))
-	if (KEYUP("Change"))
+	if (KEYPUSH("Change"))
 	{
-		GET_SINGLE(CSceneManager)->Change();
-	}*/
+		CObj* pMap =CMap::FindObject("Map");
+		CObj::EraseSceneObject("Map", pMap);
+	//	GET_SINGLE(CSceneManager)->Change();
+	}
 
 
 	return 0;
@@ -136,4 +146,5 @@ void CtestScene::Collision(float fTime)
 
 void CtestScene::Render(HDC hDC, float fTime)
 {
+
 }

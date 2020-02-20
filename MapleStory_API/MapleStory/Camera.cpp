@@ -66,6 +66,18 @@ void CCamera::Update(float fTime)
 			//else if (m_tPos.y + m_tResolution.y >= m_tWorldSize.y)
 			//	m_tPos.y = m_tWorldSize.y - m_tResolution.y;
 		}
+		else
+		{
+			m_tPos.x -=m_tResolution.x;
+			m_tPos.y -=m_tResolution.y;
+
+			if (m_tPos.x <= 0)
+				m_tPos.x = m_tPrePos.x;
+			if (m_tPos.x > m_tWorldSize.x - (m_tResolution.x / 2))
+				m_tPos.x = m_tPrePos.x;
+
+			m_tPrePos = m_tPos;
+		}
 	
 
 }

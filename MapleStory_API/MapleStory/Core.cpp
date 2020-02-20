@@ -39,6 +39,7 @@ CCore::~CCore()
 	DESTROY_SINGLE(CPathManager);
 	DESTROY_SINGLE(CResourceManager);
 	DESTROY_SINGLE(CInput);
+	
 	SAFE_RELEASE(m_pBackBuffer);
 	SAFE_DELETE(m_pTimer);
 	//SAFE_RELEASE(m_pBackBuffer);
@@ -103,9 +104,9 @@ bool CCore::Init(HINSTANCE hInst, unsigned int iWidth, unsigned int iHeight,
 	if (!GET_SINGLE(CSceneManager)->Init())
 		return false;
 
-	//네트워크매니저 초기화
-	if (!GET_SINGLE(NetworkManager)->Init())
-		return false;
+	//	//네트워크매니저 초기화
+	//if (!GET_SINGLE(NetworkManager)->Init())
+	//	return false;
 
 	// 백버퍼를 얻어온다.
 	m_pBackBuffer = GET_SINGLE(CResourceManager)->FindTexture("BackBuffer");
@@ -438,7 +439,7 @@ LRESULT CCore::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			GET_SINGLE(NetworkManager)->readPacket((SOCKET)wParam);
 			break;
 		case FD_CLOSE:
-			//NetworkManager::getInstance()->shutDownServer();
+			GET_SINGLE(NetworkManager)->shutDownServer();
 			break;
 		}
 	}

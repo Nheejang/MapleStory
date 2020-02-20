@@ -41,8 +41,9 @@ enum ANIMATION_OPTION
 enum MAP_TYPE
 {
 	MT_MOVE, //움직일수있는공간
-	MT_NOMOVE //움직일수없는공간
-	//MT_UNEVEN //움직일수없는데 평평하지않은공간
+	MT_NOMOVE, //걷는 직선지형
+	MT_NOMOVE2, //절벽 지형
+	MT_UNEVEN //걷는 대각지형
 
 };
 
