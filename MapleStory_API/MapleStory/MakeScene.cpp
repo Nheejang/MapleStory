@@ -23,6 +23,7 @@ CMakeScene::~CMakeScene()
 {
 	SAFE_RELEASE(m_pMouse);
 	SAFE_RELEASE(m_pMap);
+	SAFE_RELEASE(m_pMapUI);
 }
 
 bool CMakeScene::Init()
@@ -61,7 +62,7 @@ bool CMakeScene::Init()
 	//SAFE_RELEASE(pMonster);
 
     m_pMap = CObj::CreateObject<CMap>("Map", pBackLayer);
-	m_pMap->SetMap(MT_MOVE, MO_NONE, GET_SINGLE(CCamera)->GetWorldSize(), 50, 50, (GET_SINGLE(CCamera)->GetWorldSize() / 50, GET_SINGLE(CCamera)->GetWorldSize() / 50));
+	m_pMap->SetMap(MT_MOVE, MO_NONE, GET_SINGLE(CCamera)->GetWorldSize(), 50, 50, POSITION(50,50));
 
 //	SAFE_RELEASE(pMap);
 	//GET_SINGLE(CCamera)->SetTarget(pPlayer);

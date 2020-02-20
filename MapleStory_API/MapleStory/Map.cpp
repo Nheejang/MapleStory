@@ -25,6 +25,8 @@ CMap::CMap(const CMap& Map) :
 CMap::~CMap()
 {
 	SAFE_RELEASE(m_pTexture);
+	for (int i = 0; i <4; i++)
+		SAFE_RELEASE(m_pTypeTexArray[i]);
 	delete[] arrTile;
 }
 

@@ -2,6 +2,7 @@
 #include"Input.h"
 #include"Math.h"
 #include"Camera.h"
+#include"Animation.h"
 CPlayer::CPlayer()
 {
 	SetTag("Player");
@@ -16,7 +17,7 @@ CPlayer::CPlayer(const CPlayer& player)
 }
 CPlayer::~CPlayer()
 {
-
+	
 }
 
 bool CPlayer::Init()
