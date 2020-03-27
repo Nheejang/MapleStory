@@ -15,7 +15,6 @@ private:
 	MAP_TYPE m_eMapType;
 	MAP_OPTION m_eMapOption;
 	int m_iIndex;
-	CTexture* m_pTypeTexArray[4];
 	_SIZE m_MapSize;
 	int m_XNumber;
 	int m_YNumber;

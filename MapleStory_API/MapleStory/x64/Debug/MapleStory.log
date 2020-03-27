@@ -1,9 +1,17 @@
-﻿  Core.cpp
+﻿  ColliderPixel.cpp
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(43,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(44,4): warning C4244:  '초기화 중': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(50,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(51,11): warning C4244:  '=': 'const LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(336,34): warning C4838:  'unsigned int'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(336,56): warning C4838:  'unsigned int'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(336,56): warning C4838: C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Core.cpp(115) : warning C4715: 'CCore::Init': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(394,45): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(394,19): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(393,57): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(393,31): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(403,29): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(403,21): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(410,28): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\Type.h(410,20): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\ColliderPixel.cpp(79,21): warning C4018:  '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\ColliderPixel.cpp(113,8): warning C4244:  '초기화 중': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\MapleStory\ColliderPixel.cpp(114,8): warning C4244:  '초기화 중': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MapleStory.vcxproj -> C:\Users\IBK\Desktop\MapleStory\MapleStory\MapleStory_API\x64\Debug\MapleStory.exe

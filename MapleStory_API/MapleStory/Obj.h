@@ -67,6 +67,8 @@ protected:
 	DWORD	m_dwColorKey;
 	bool	m_bColorKey;
 
+	list<class CCollider*> m_ColliderList;
+
 	bool	m_bGravity;
 	float	m_fForce;
 	float	m_fForceOrigin;
@@ -74,6 +76,7 @@ protected:
 	bool	m_bCameraEnable;
 	POSITION	m_tMove;
 
+	
 	class CAnimation* m_pAnimation;
 
 public:
@@ -87,7 +90,11 @@ public:
 		return m_eType;
 	}
 
-	
+	const list<class CCollider*>* GetColliderList()const
+	{
+		return &m_ColliderList;
+	}
+	class CCollider* GetCollider(const string& strTag);
 
 public:
 	void SetCameraEnable(bool bEnable)

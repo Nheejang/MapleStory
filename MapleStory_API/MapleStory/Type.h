@@ -353,3 +353,81 @@ typedef struct _tagRectInfo
 		Ellipse(hDC, (int)l, (int)t, (int)r, (int)b);
 	}
 }RECTINFO, * PRECTINFO;
+
+typedef struct _tagSphereInfo
+{
+	POSITION tCenter;
+	float fRadius;
+
+	_tagSphereInfo():
+		fRadius(0.f)
+	{
+	}
+
+	_tagSphereInfo(float x, float y, float r) :
+		tCenter(x, y),
+		fRadius(r)
+	{
+	}
+	_tagSphereInfo(const _tagSphereInfo& tInfo)
+	{
+		tCenter = tInfo.tCenter;
+		fRadius = tInfo.fRadius;
+	}
+
+	void SetSphere(float x, float y, float r)
+	{
+		tCenter.x = x;
+		tCenter.y = y;
+		fRadius = r;
+	}
+
+	void Move(float x, float y)
+	{
+		tCenter.x += x;
+		tCenter.y += y;
+	}
+
+	void Render(HDC hDC)
+	{
+		Ellipse(hDC, (int)tCenter.x - fRadius, (int)tCenter.y - fRadius,
+			(int)tCenter.x + fRadius, (int)tCenter.y + fRadius);
+	}
+
+	void RenderFrame(HDC hDC)
+	{
+		POSITION tPos;
+		tPos.x = tCenter.x + fRadius;
+		tPos.y = tCenter.y;
+
+		MoveToEx(hDC, tPos.x, tPos.y, nullptr);
+
+		for (int i = 2; i <= 180; ++i)
+		{
+			tPos.x = tCenter.x + cosf(i * 2 * PI / 180.f) * fRadius;
+			tPos.y = tCenter.y + sinf(i * 2 * PI / 180.f) * fRadius;
+
+			LineTo(hDC, tPos.x, tPos.y);
+		}
+	}
+}SPHEREINFO,*PSPHEREINFO;
+
+typedef struct _tagPixel32
+{
+	unsigned char r;
+	unsigned char g;
+	unsigned char b;
+	unsigned char a;
+
+}PIXEL32,*PPIXEL32;
+typedef struct _tagPixelCollInfo
+{
+	void* pPixel;
+	unsigned int iPixelSize;
+	unsigned int iPixelCount;
+	unsigned int iWidth;
+	unsigned int iHeight;
+	POSITION tWorldPos;
+	PIXEL32 tCollisionPixel;
+
+}PIXELINFO,*PPIXELINFO;

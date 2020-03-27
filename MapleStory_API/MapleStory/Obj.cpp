@@ -7,6 +7,7 @@
 #include"Animation.h"
 #include "Camera.h"
 #include "PathManager.h"
+#include"CollisionManager.h"
 
 unordered_map<string, class CObj*> CObj::m_mapPrototype;
 unordered_multimap<string, class CObj*> CObj::m_mapSceneObj;
@@ -197,6 +198,21 @@ CLayer* CObj::GetLayer() const
 	return m_pLayer;
 }
 
+CCollider* CObj::GetCollider(const string& strTag)
+{
+	list<CCollider*>::iterator iter;
+	list<CCollider*>::iterator iterEnd = m_ColliderList.end();
+
+	for (iter = m_ColliderList.begin(); iter != iterEnd; ++iter)
+	{
+		if ((*iter)->GetTag() == strTag)
+		{
+			(*iter)->AddRef();
+			return *iter;
+		}
+	}
+	return nullptr;
+}
 
 bool CObj::SetTexture(const string& strKey, const TCHAR* pFileName, const string& strPathKey)
 {

@@ -53,3 +53,20 @@ enum MAP_OPTION
 	MO_ICE,
 	MO_SLOW
 };
+
+//Collider Type
+enum COLLIDER_TYPE
+{
+	CT_RECT,
+	CT_SPHERE,
+	CT_PIXEL,
+	CT_POINT
+};
+
+enum COLLISION_CALLBACK_TYPE
+{
+	CCT_ENTER,
+	CCT_STAY,
+	CCT_LEAVE,
+	CCT_END
+};

@@ -67,6 +67,9 @@
     <Filter Include="01.Core\09.NetworkManager">
       <UniqueIdentifier>{847f117b-f4f9-4d97-a88a-273c62fcdc0a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06.Collision">
+      <UniqueIdentifier>{0dbede9a-cabc-4304-98ac-f738a9d1dc81}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Macro.h">
@@ -177,6 +180,18 @@
     <ClInclude Include="MakeScene.h">
       <Filter>03.Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>06.Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>06.Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderPixel.h">
+      <Filter>06.Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderRect.h">
+      <Filter>06.Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -271,6 +286,18 @@
     </ClCompile>
     <ClCompile Include="MakeScene.cpp">
       <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>06.Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>06.Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderPixel.cpp">
+      <Filter>06.Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderRect.cpp">
+      <Filter>06.Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

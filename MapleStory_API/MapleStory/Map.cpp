@@ -25,8 +25,7 @@ CMap::CMap(const CMap& Map) :
 CMap::~CMap()
 {
 	SAFE_RELEASE(m_pTexture);
-	for (int i = 0; i <4; i++)
-		SAFE_RELEASE(m_pTypeTexArray[i]);
+
 	delete[] arrTile;
 }
 
@@ -34,17 +33,7 @@ void CMap::SetMapType(MAP_TYPE eType)
 {
 	m_eMapType = eType;
 
-//	SAFE_RELEASE(m_pTexture);
 
-	//switch (m_eMapType)
-	//{
-	//case MT_MOVE:
-	//	m_pTypeTex = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeMove", TEXT("OptionNone.bmp"));
-	//	break;
-	//case MT_NOMOVE:
-	//	m_pTypeTex = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeNoMove", TEXT("OptionNoMove.bmp"));
-	//	break;
-	//}
 }
 
 void CMap::SetMap(MAP_TYPE eType, MAP_OPTION eMapOption, _SIZE MapSize, int xNum, int yNum, _SIZE TileSize)
@@ -55,15 +44,7 @@ void CMap::SetMap(MAP_TYPE eType, MAP_OPTION eMapOption, _SIZE MapSize, int xNum
 	m_XNumber = xNum;
 	m_YNumber = yNum;
 	m_TileSize = TileSize;
-	//switch (m_eMapType)
-	//{
-	//case MT_MOVE:
-	//	m_pTypeTex = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeMove", TEXT("OptionNone.bmp"));
-	//	break;
-	//case MT_NOMOVE:
-	//	m_pTypeTex = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeNoMove", TEXT("OptionNoMove.bmp"));
-	//	break;
-	//}
+
 	arrTile = new MAP_TYPE[m_XNumber * m_YNumber]{MT_MOVE};
 }
 void CMap::SetTile(MAP_TYPE type, POSITION pos)
@@ -95,11 +76,7 @@ void CMap::SetTile(MAP_TYPE type, POSITION pos)
 bool CMap::Init()
 {
 	
-		m_pTypeTexArray[0] = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeMove", TEXT("OptionNone.bmp"));
-		m_pTypeTexArray[1] = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeNoMove", TEXT("NoMove.bmp"));
-		m_pTypeTexArray[2] = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeNoMove2", TEXT("NoMove2.bmp"));
-		m_pTypeTexArray[3] = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeUnEven", TEXT("UnEvenUp.bmp"));
-	
+		
 	
 	return true;
 }
@@ -185,27 +162,35 @@ void CMap::RenderGrid(HDC hDC, float fTime)
 			switch (arrTile[j * m_XNumber + i])
 			{
 			case MT_MOVE:
-				this->SetTexture(m_pTypeTexArray[0]);
+				//this->SetTexture(m_pTypeTexArray[0]);
+				SAFE_RELEASE(m_pTexture);
+				m_pTexture=GET_SINGLE(CResourceManager)->LoadTexture("MapTypeMove", TEXT("OptionNone.bmp"));
 				SetColorKey(255, 0, 255);
 				TransparentBlt(hDC, m_TileSize.x * i - tCameraPos.x, m_TileSize.y * j - tCameraPos.y, m_tSize.x, m_tSize.y, m_pTexture->GetDC(),
 					0, 0, 52, 52, m_dwColorKey);
 				break;
 			case MT_NOMOVE:
-				this->SetTexture(m_pTypeTexArray[1]);
+				SAFE_RELEASE(m_pTexture);
+				m_pTexture = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeNoMove", TEXT("NoMove.bmp"));
+				//this->SetTexture(m_pTypeTexArray[1]);
 				SetColorKey(255, 255, 255);
 				TransparentBlt(hDC, m_TileSize.x * i - tCameraPos.x, m_TileSize.y * j - tCameraPos.y, m_tSize.x, m_tSize.y, m_pTexture->GetDC(),
 					0, 0, m_TileSize.x, m_TileSize.y, m_dwColorKey);
 			//	SAFE_RELEASE(m_pTexture);
 				break;
 			case MT_NOMOVE2:
-				this->SetTexture(m_pTypeTexArray[2]);
+				//this->SetTexture(m_pTypeTexArray[2]);
+				SAFE_RELEASE(m_pTexture);
+				m_pTexture = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeNoMove2", TEXT("NoMove2.bmp"));
 				SetColorKey(255, 255, 255);
 				TransparentBlt(hDC, m_TileSize.x * i - tCameraPos.x, m_TileSize.y * j - tCameraPos.y, m_tSize.x, m_tSize.y, m_pTexture->GetDC(),
 					0, 0, m_TileSize.x, m_TileSize.y, m_dwColorKey);
 			//	SAFE_RELEASE(m_pTexture);
 				break;
 			case MT_UNEVEN:
-				this->SetTexture(m_pTypeTexArray[3]);
+				SAFE_RELEASE(m_pTexture);
+				m_pTexture = GET_SINGLE(CResourceManager)->LoadTexture("MapTypeUnEven", TEXT("UnEvenUp.bmp"));
+				//this->SetTexture(m_pTypeTexArray[3]);
 				SetColorKey(255, 255, 255);
 				TransparentBlt(hDC, m_TileSize.x * i - tCameraPos.x, m_TileSize.y * j - tCameraPos.y, m_tSize.x, m_tSize.y, m_pTexture->GetDC(),
 					0, 0, m_TileSize.x, m_TileSize.y, m_dwColorKey);
